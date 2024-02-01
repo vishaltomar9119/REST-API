@@ -91,8 +91,10 @@ Router.get('/get-information', async(req, res)=>{
     }
   }
 ]);
+if(data.length!=0)
 res.send(data)
-
+else
+res.send({status:false , data:[], msg:'data not found'});
 
   }catch(err){
     res.send(err);
